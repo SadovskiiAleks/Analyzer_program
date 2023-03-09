@@ -1,0 +1,20 @@
+package org.example;
+
+import java.util.concurrent.Callable;
+
+public class CheckC implements Callable {
+    private final String text;
+    private int maxA = 0;
+
+    CheckC(String text) {
+        this.text = text;
+    }
+
+    @Override
+    public Integer call() throws Exception {
+        for (char charA : text.toCharArray()) {
+            if (charA == 'a') { maxA++;}
+        }
+        return maxA;
+    }
+}
