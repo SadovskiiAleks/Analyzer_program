@@ -12,8 +12,8 @@ public class CheckC implements Callable {
 
     @Override
     public Integer call() throws Exception {
-        for (char charA : text.toCharArray()) {
-            if (charA == 'a') { maxA++;}
+        for (char charC : text.toCharArray()) {
+            if (charC == 'c') { maxA++;}
         }
         return maxA;
     }

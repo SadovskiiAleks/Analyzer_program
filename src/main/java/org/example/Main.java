@@ -34,8 +34,8 @@ public class Main {
             for (int i = 0; i <= 10_000; i++) {
                 try {
                     maxA.set(Math.max(maxA.get(), (int) threadPool.submit(new CheckA((String) arrayBlockingQueueA.take())).get()));
-                    maxB.set(Math.max(maxB.get(), (int) threadPool.submit(new CheckA((String) arrayBlockingQueueB.take())).get()));
-                    maxC.set(Math.max(maxC.get(), (int) threadPool.submit(new CheckA((String) arrayBlockingQueueC.take())).get()));
+                    maxB.set(Math.max(maxB.get(), (int) threadPool.submit(new CheckB((String) arrayBlockingQueueB.take())).get()));
+                    maxC.set(Math.max(maxC.get(), (int) threadPool.submit(new CheckC((String) arrayBlockingQueueC.take())).get()));
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 } catch (ExecutionException e) {
